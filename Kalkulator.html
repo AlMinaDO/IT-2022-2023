@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+
+    <div class="searchbar"> 
+        <input id="idInn" type="text"  placeholder="Search.." title="Type in a category"> 
+       </div>
+   
+       <meta charset="utf-8">
+
+    <link rel="stylesheet" href="Stylefoodoptions.css">
+    <link rel="stylesheet" href="stylenettside.css">
+    <link rel="stylesheet" href="GuessNumber.css">
+</head>
+<body>
+    
+    
+    <ul>
+    <li>
+        <a class="active" href="index.html">Home</a>
+
+    
+    </li>
+   
+
+    
+    <li>
+              <div class="dropdown">
+            <a href="#Recipes"> Recipes</a>
+            <div class="dropdown-content">
+                <a href="Italian.html"> Italian </a>
+                <a href="Arabic.html"> Arabic</a>
+                <a href="Thai.html"> Thai</a>
+                <a href="Mexican.html"> Mexican</a>
+
+            </div>
+
+
+        </div>
+    </li>
+    <li><a href="mailto:aldolaimimina@gmail.com">Contact</a></li>
+    <li><a href="About.html">About</a></li>
+
+    <li>
+        <div class="dropdown">
+        <a href="#Other"> Other</a>
+        <div class="dropdown-content">
+        <div class="dropdown"> 
+            <a href="./Gjett tall 1-100.html"> Minigame</a>
+            <a href="./Kalkulator.html">Kalkulator</a>
+            <a href="./quiz1.html">Quiz</a>
+        </div>
+    </div>
+    </li>
+
+
+
+</ul>
+
+<h1> Calculator!</h1>
+<h2> Calculate your measurement</h2>
+
+<div class="Inputbox">
+        <input id="idInn1" type="text"  placeholder="Regn...">
+        <p> Svaret er: <span id="idTilbake"> </span></p> 
+     
+    </div>
+
+       <script> 
+     let innEl1 = document.getElementById("idInn1");
+     let tilbakeEl = document.getElementById("idTilbake")
+    innEl1.focus();
+    innEl1.addEventListener("keydown", innfunk);
+            
+    function innfunk (event){ 
+        if(event.keyCode === 13)  {
+            svarfunk()
+        }
+    }
+
+        function svarfunk() {
+            let tekst = innEl1.value
+                let pluss = tekst.indexOf("+"); /* tekst.indexOf definerer posisjonen av en spesifikk string */
+                console.log(tekst[1]);
+                if(pluss>0){
+                 let tall1 = Number(tekst.substr(0,pluss)); /* gjør om stringen til nummer før plusstegnet */
+                  let tall2 = Number(tekst.substr(pluss+1)); /* gjør om stringen til nummer etter plusstegnet*/
+                 tilbakeEl.innerHTML = tall1 + tall2;
+        }
+                let minus = tekst.indexOf("-");
+                if(minus>0){
+                 let tall1 = Number(tekst.substr(0,minus));
+                  let tall2 = Number(tekst.substr(minus+1));
+                 tilbakeEl.innerHTML = tall1 - tall2;
+
+                }
+
+                let gange = tekst.indexOf("*");
+                if(gange>0){
+                 let tall1 = Number(tekst.substr(0,gange));
+                  let tall2 = Number(tekst.substr(gange+1));
+                 tilbakeEl.innerHTML = tall1 * tall2;
+            
+              
+              }
+                 let dele = tekst.indexOf("/");
+                if(dele>0){
+                 let tall1 = Number(tekst.substr(0,dele));
+                  let tall2 = Number(tekst.substr(dele+1));
+                 tilbakeEl.innerHTML = tall1 / tall2;
+                }
+
+                
+                let opphøyd = tekst.indexOf("^");
+                if(opphøyd>0){
+                 let tall1 = Number(tekst.substr(0,opphøyd));
+                  let tall2 = Number(tekst.substr(opphøyd+1));
+                 tilbakeEl.innerHTML = tall1 ** tall2;
+
+                }
+                 /*
+                let kvadratrot = tekst.indexOf("s");
+                if(kvadratrot=>0){
+                    let tall1 = Number(tekst.substr(0,kvadratrot))
+                  let tall2 = Number(tekst.substr(kvadratrot+1));
+                 tilbakeEl.innerHTML = Math.sqrt(tall2);
+*/
+                
+
+                }
+        
+
+
+        
+    </script>
+
+
+
+<script src="../Searchbar.js">
+
+
+</script>
+
+
+
+
